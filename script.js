@@ -1,7 +1,7 @@
-const canvas = document.getElementById('canvas1');
+const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
-canvas.width = 700;
-canvas.height = 500;
+canvas.width = innerWidth;
+canvas.height = innerHeight;
 
 const keys = [];
 
@@ -19,7 +19,7 @@ const player = {
 const playerSprite = new Image();
 playerSprite.src = "img/Walk.png";
 const background = new Image();
-background.src = "img/fix.png";
+background.src = "img/background.png";
 
 function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH){
     ctx.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH)
