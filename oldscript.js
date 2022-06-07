@@ -5,6 +5,10 @@ canvas.height = innerHeight;
 
 const keys = [];
 
+function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH){
+    ctx.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH)
+}
+
 const player = {
     x: 350,
     y: 400,
@@ -20,10 +24,6 @@ const playerSprite = new Image();
 playerSprite.src = "img/Walk.png";
 const background = new Image();
 background.src = "img/background.png";
-
-function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH){
-    ctx.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH)
-}
 
 window.addEventListener("keydown", function(e){
     keys[e.keyCode] = true;
@@ -87,7 +87,8 @@ function animate(){
         player.height, player.x, player.y, player.width, 
         player.height);
         movePlayer();
-        handleplayerFrame()
+        handleplayerFrame();
+        drawFruits();
     }
 }
 startAnimating(24);
